@@ -2,6 +2,7 @@
 // Output: a b c d e f
 
 #include <iostream>
+using namespace std;
 
 void Display()
 {
@@ -9,7 +10,7 @@ void Display()
 
     if(ch <= 'f')
     {
-        printf("%c\t",ch);
+        cout << ch << "\t";
         ch++;
         Display();
     }
@@ -19,6 +20,6 @@ int main()
 {
     Display();
 
-    printf("\n");
+    cout << endl;
     return 0;
 }
