@@ -3,13 +3,14 @@
 
 #include <iostream>
 
+
 void Display()
 {
     static int i = 5;
 
     if( i >= 1)
     {
-        printf("%d\t",i);
+        std::cout << i << "\t";
         i--;
         Display();
     }
@@ -19,6 +20,6 @@ int main()
 {
     Display();
 
-    printf("\n");
+    std::cout << std::endl;
     return 0;
 }
