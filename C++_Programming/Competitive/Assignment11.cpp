@@ -2,6 +2,7 @@
 // Output: * * * * *
 
 #include <iostream>
+using namespace std;
 
 void Display()
 {
@@ -9,7 +10,7 @@ void Display()
 
     if( i <= 5)
     {
-        printf("*\t");
+        cout << "*\t";
         i++;
         Display();
     }
@@ -19,6 +20,6 @@ int main()
 {
     Display();
 
-    printf("\n");
+    cout << endl;
     return 0;
 }
