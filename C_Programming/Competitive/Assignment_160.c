@@ -18,13 +18,13 @@ void AddContents(char FNAME[], char str[])
     int fd = 0, iRet = 0;
     char Buffer[BUFFER_SIZE] = {'\0'};
 
-    fd = open(FNAME, O_RDONLY | O_APPEND);
+    fd = open(FNAME, O_RDWR | O_APPEND);
 
     if(fd == -1)
     {
         return;
     }
-    
+
     write(fd, str, strlen(str));
 
     close(fd);
