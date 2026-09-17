@@ -3,7 +3,7 @@
 using namespace std;
 
 /*
-    Algorithm
+    Algorithm 
 
     START
         Accept first number as No1
