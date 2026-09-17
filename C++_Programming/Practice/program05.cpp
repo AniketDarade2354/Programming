@@ -8,7 +8,7 @@ int main()
     float fValue2 = 0.0f;   // To store second input
     float fValue3 = 0.0f;   // To store the result
 
-    cout << "Enter first number : \n";
+    cout << "Enter first number : \n"; 
     cin >> fValue1;
 
     cout << "Enter second number : \n";
