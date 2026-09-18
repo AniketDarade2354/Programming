@@ -8,7 +8,7 @@ class ArrayX
         int iSize;
 
         ArrayX();
-        ArrayX(int Size);
+        ArrayX(int Size); 
         ArrayX(const ArrayX &obj);
 
         ~ArrayX();
