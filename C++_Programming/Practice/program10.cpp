@@ -42,7 +42,7 @@ int main()
 
     if((sobj.containsDuplicate(Arr)) == true)
     {
-        cout << "Duplicate\n";
+        cout << "Duplicate\n"; 
     }
     else
     {
