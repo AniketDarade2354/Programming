@@ -9,7 +9,7 @@ float AddTwoNumbers(float fNo1, float fNo2)
     return fAns;
 }
 
-int main()
+int main() 
 {
     float fValue1 = 0.0f;   // To store first input
     float fValue2 = 0.0f;   // To store second input
