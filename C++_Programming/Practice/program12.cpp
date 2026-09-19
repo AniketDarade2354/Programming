@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    vector<int> nums;
+    vector<int> nums; 
 
     nums.push_back(11);
     nums.push_back(21);
