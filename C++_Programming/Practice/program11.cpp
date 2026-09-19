@@ -4,7 +4,7 @@
 using namespace std;
 
 int main()
-{
+{ 
     vector<int> v;      // empty
     vector<int> v1(5);   // size n, zero-initialized
     vector<int> v2(6, 0);  // size n, filled with val
