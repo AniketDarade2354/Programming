@@ -19,7 +19,7 @@ int main()
     }
     cout << endl;
 
-    nums.erase(nums.begin()+2);
+    nums.erase(nums.begin()+2); 
 
     for(int i = 0; i < nums.size(); i++)
     {
