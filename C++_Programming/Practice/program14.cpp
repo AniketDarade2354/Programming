@@ -11,7 +11,7 @@ int main()
     nums[1] = 21;
     nums[2] = 51;
     nums[3] = 101;
-    nums[4] = 121;
+    nums[4] = 121; 
 
     for(int i = 0; i < nums.size(); i++)
     {
