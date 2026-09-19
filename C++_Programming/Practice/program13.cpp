@@ -11,7 +11,7 @@ int main()
     nums.push_back(21);
     nums.push_back(51);
     nums.push_back(101);
-    nums.push_back(121);
+    nums.push_back(121); 
     
     cout << nums[0] << endl;    // 0
     cout << nums[1] << endl;    // 0
