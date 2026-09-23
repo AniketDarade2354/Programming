@@ -6,7 +6,7 @@ int main()
 {
     int i, j, k;
 
-    cout << "Enter first number : \n";
+    cout << "Enter first number : \n"; 
     cin >> i;
 
     cout << "Enter second number : \n";
