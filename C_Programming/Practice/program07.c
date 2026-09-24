@@ -11,7 +11,7 @@ int main()
 
     printf("Enter second number : \n");
     scanf("%f",&fValue2);
-
+ 
     fResult = fValue1 + fValue2;            // Perform the addition
 
     printf("Addition is : %f\n",fResult);
