@@ -18,7 +18,7 @@ int main()
     scanf("%d",&iValue);
 
     iRet = CheckEvenOdd(iValue);
-
+ 
     if(iRet == 0)
     {
         printf("Number is Even\n");
