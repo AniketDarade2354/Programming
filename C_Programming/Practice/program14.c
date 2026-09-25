@@ -20,7 +20,7 @@ int main()
     iRet = CheckEvenOdd(iValue);
 
     if(iRet == 0)
-    {
+    { 
         printf("%d is Even\n", iValue);
     }
     else
