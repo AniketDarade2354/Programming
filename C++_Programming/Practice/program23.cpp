@@ -15,5 +15,5 @@ public:
 int main()
 {
     Base* b = new Derived();
-    delete b;
+    delete b; 
 }
