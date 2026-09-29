@@ -14,7 +14,7 @@ int main()
 
     p[0] = 10;  // Undefinde Behaviour 
     // use - after - free
-
+ 
     std::cout << p[0] << std::endl;
 
     return 0;
