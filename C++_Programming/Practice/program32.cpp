@@ -3,9 +3,15 @@
 
 int main()
 {
-    std::unique_ptr<int> a = std::make_unique<int>(5);
-    std::unique_ptr<int> b = std::move(a); // ERROR solved by transfering ownership
+    auto a = std::make_shared<int>(5);
+
+    auto b = a;
+
+    std::cout << *a << std::endl;
+    std::cout << *b << std::endl;
+    
+    std::cout << a << std::endl;
+    std::cout << b << std::endl;
 
     return 0;
 }
- 
