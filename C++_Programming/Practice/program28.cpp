@@ -11,6 +11,6 @@ int main()
     int *p = createArray();
 
     delete[] p;
-
+ 
     return 0;
 } 
