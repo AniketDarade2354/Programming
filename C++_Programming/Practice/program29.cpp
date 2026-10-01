@@ -16,6 +16,6 @@ int main()
     // use - after - free
  
     std::cout << p[0] << std::endl;
-
+ 
     return 0;
 }
