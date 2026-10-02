@@ -3,7 +3,7 @@
 typedef unsigned int UINT;
 
 UINT ToggleBits(UINT iNo, UINT iPos1, UINT iPos2)
-{
+{ 
     UINT    iMask1 = 0x1,
             iMask2 = 0x1,
             iMask = 0,
