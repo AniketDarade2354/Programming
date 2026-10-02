@@ -10,7 +10,7 @@ int main()
 {
     int *p = createArray();
 
-    delete[] p;
+    delete[] p; 
  
     return 0;
 } 
