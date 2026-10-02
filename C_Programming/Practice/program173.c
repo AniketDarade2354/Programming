@@ -4,7 +4,7 @@ typedef unsigned int UINT;
 
 // Position 3 & 8
 int main()
-{
+{ 
     UINT iMask1 = 0x1;   
     UINT iMask2 = 0x1;   
     UINT iMask = 0;
