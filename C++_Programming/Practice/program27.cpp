@@ -9,7 +9,7 @@ int* createArray()
 int main()
 {
     int *p = createArray();
-
+ 
     return 0;
 }
  
