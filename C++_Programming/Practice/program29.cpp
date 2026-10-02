@@ -11,7 +11,7 @@ int main()
     int *p = createArray();
 
     delete[] p;
-
+ 
     p[0] = 10;  // Undefinde Behaviour 
     // use - after - free
  
