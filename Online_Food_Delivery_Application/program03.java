@@ -1,14 +1,30 @@
-import java.util.*;
-
 /*
-    Online Food Delivery App
+    Online Food Delivery System
 
-    Step 1 : Create FoodItem Class (Abstract class)
-    Step 2 : Create Panner and Chicken class
-    Step 3 : Create Factory Class
- */
+    Step 1  : Create required enums (OrderStatus, PaymentStatus, FoodCategory, AvailabilityStatus)
+    Step 2  : Address class
+    Step 3  : FoodItem class
+    Step 4  : Menu class
+    Step 5  : Restaurant class
+    Step 6  : User class (abstract)
+    Step 7  : Customer class (extends User)
+    Step 8  : DeliveryPartner class (extends User)
+    Step 9  : CartItem class
+    Step 10 : Cart class
+    Step 11 : OrderItem class (price snapshot)
+    Step 12 : PaymentStrategy interface with UPIPayment, CardPayment, CashOnDelivery (Strategy Pattern)
+    Step 13 : PaymentFactory class (Factory Pattern, optional)
+    Step 14 : Payment class
+    Step 15 : OrderObserver interface, implemented by Customer, Restaurant, DeliveryPartner (Observer Pattern)
+    Step 16 : Order class (status transitions, cancel rules)
+    Step 17 : DeliveryAssignmentStrategy interface (Strategy Pattern)
+    Step 18 : DeliveryService class
+    Step 19 : FoodDeliveryApp class (Singleton Pattern, optional)
+    Step 20 : Main class (Controller, runs the Rahul scenario)
 
-class program02
+*/
+
+class program01
 {
     public static void main(String A[])
     {
@@ -16,185 +32,88 @@ class program02
     }
 }
 
-enum Category
+//////////////////////////////////////////////////////////////////////////
+// Step 1 : Create required enums
+//////////////////////////////////////////////////////////////////////////
+
+enum OrderStatus
+{
+    PLACED,
+    ACCEPTED,
+    PREPARING,
+    READY_FOR_PICKUP,
+    PICKED_UP,
+    OUT_FOR_DELIVERY,
+    DELIVERED,
+    CANCELLED,
+    REJECTED
+}
+
+enum PaymentStatus
+{
+    PENDING,
+    SUCCESS,
+    FAILED,
+    REFUNDED
+}
+
+enum FoodCategory
 {
     VEG,
     NON_VEG,
-    BEVERAGES,
+    BEVERAGE,
     DESSERT
 }
 
-enum IsAvailable
+enum AvailabilityStatus
 {
-    YES,
-    NO
+    AVAILABLE,
+    BUSY
 }
 
-enum Item
+//////////////////////////////////////////////////////////////////////////
+// Step 2 : Create Address Class
+//////////////////////////////////////////////////////////////////////////
+
+class Address
 {
-    Panner,
-    Chiken
-}
+    private String HouseNo;
+    private String Area;
+    private String City;
+    private String State;
+    private int pinCode;
 
-
-abstract class FoodItem
-{
-    private int ItemID;
-    private String ItemName;
-    private double price;
-    private Category category;
-    private IsAvailable isAvailable;
-
-    public FoodItem(    int ItemID,
-                        String ItemName,
-                        double price,
-                        Category category,
-                        IsAvailable isAvailable
-                    )
+    public Address(String HouseNo, String Area, String City, String State, int pinCode)
     {
-        this.ItemID = ItemID;
-        this.ItemName = ItemName;
-        this.price = price;
-        this.category = category;
-        this.isAvailable = isAvailable;
+        this.HouseNo = HouseNo;
+        this.Area = Area;
+        this.City = City;
+        this.State = State;
+        this.pinCode = pinCode;
     }
 
-    public int getItemID()
+    public String getHouseNo()
     {
-        return this.ItemID;
+        return this.HouseNo;
     }
 
-    public String getItemName()
+    public String getArea()
     {
-        return this.ItemName;
-    }
-    
-    public double getPrice()
-    {
-        return this.price;
-    }
-    
-    public Category getCategory()
-    {
-        return this.category;
-    }
-    
-    public IsAvailable getIsAvailable()
-    {
-        return this.isAvailable;
-    }
-    
-    public void setItemID(int ItemID)
-    {
-        this.ItemID = ItemID;
+        return this.Area;
     }
 
-    public void setItemName(String ItemName)
+    public String getCity()
     {
-        this.ItemName = ItemName;
+        return this.City;
     }
 
-    public void setPrice(double price)
+    public String getState()
     {
-        this.price = price;
+        return this.State;
     }
 
-    public void setCategory(Category category)
+    public int getPinCode()
     {
-        this.category = category;
-    }
-
-    public void setIsAvailable(IsAvailable isAvailable)
-    {
-        this.isAvailable = isAvailable;
-    }
-
-    public abstract void display();
-}
-
-class Panner extends FoodItem
-{
-    public Panner   (   int ItemID,
-                        String ItemName,
-                        double price,
-                        Category category,
-                        IsAvailable isAvailable
-                    )
-    {
-        
-        super   (       ItemID,
-                        ItemName,
-                        price,
-                        category,
-                        isAvailable
-                );
-    }
-
-    public void display()
-    {
-        System.out.println();
-
-        System.out.println("Item Name  : " + getItemName());
-        System.out.println("Item Price : " + getPrice());
-        System.out.println("Item Category : " + getCategory());
-        System.out.println("Item Availability : " + getIsAvailable());
-
-        System.out.println();
+        return this.pinCode;
     }
 }
-
-class Chiken extends FoodItem
-{
-    public Chiken   (   int ItemID,
-                        String ItemName,
-                        double price,
-                        Category category,
-                        IsAvailable isAvailable
-                    )
-    {
-        
-        super   (       ItemID,
-                        ItemName,
-                        price,
-                        category,
-                        isAvailable
-                );
-    }
-
-    public void display()
-    {
-        System.out.println();
-
-        System.out.println("Item Name  : " + getItemName());
-        System.out.println("Item Price : " + getPrice());
-        System.out.println("Item Category : " + getCategory());
-        System.out.println("Item Availability : " + getIsAvailable());
-
-        System.out.println();
-    }
-}
-
-class ItemFactory
-{
-    public static FoodItem createItem(  int ItemID,
-                                        String ItemName,
-                                        double price,
-                                        Category category,
-                                        IsAvailable isAvailable,
-                                        Item item
-                    )
-                    {
-                        switch(item)
-                        {
-                            case Panner:
-                                return new Panner( 101, "Panner", 150.0, Category.VEG, IsAvailable.YES);
-                            
-                            case Chiken:
-                                return new Chiken( 102, "Chicken", 200.0, Category.NON_VEG, IsAvailable.YES);
-
-                            default:
-                                throw new IllegalArgumentException("Invalid FoodItem type");
-                        }
-                    }
-}
-
