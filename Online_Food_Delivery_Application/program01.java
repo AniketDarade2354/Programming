@@ -1,105 +1,33 @@
-import java.util.*;
-
 /*
-    Online Food Delivery App
+    Online Food Delivery System
 
-    Step 1 : Creat FoodItem Class (Abstract class)
+    Step 1  : Create required enums (OrderStatus, PaymentStatus, FoodCategory, AvailabilityStatus)
+    Step 2  : Address class
+    Step 3  : FoodItem class
+    Step 4  : Menu class
+    Step 5  : Restaurant class
+    Step 6  : User class (abstract)
+    Step 7  : Customer class (extends User)
+    Step 8  : DeliveryPartner class (extends User)
+    Step 9  : CartItem class
+    Step 10 : Cart class
+    Step 11 : OrderItem class (price snapshot)
+    Step 12 : PaymentStrategy interface with UPIPayment, CardPayment, CashOnDelivery (Strategy Pattern)
+    Step 13 : PaymentFactory class (Factory Pattern, optional)
+    Step 14 : Payment class
+    Step 15 : OrderObserver interface, implemented by Customer, Restaurant, DeliveryPartner (Observer Pattern)
+    Step 16 : Order class (status transitions, cancel rules)
+    Step 17 : DeliveryAssignmentStrategy interface (Strategy Pattern)
+    Step 18 : DeliveryService class
+    Step 19 : FoodDeliveryApp class (Singleton Pattern, optional)
+    Step 20 : Main class (Controller, runs the Rahul scenario)
 
- */
+*/
 
 class program01
 {
     public static void main(String A[])
     {
-       
-    }
-}
 
-enum Category
-{
-    VEG,
-    NON_VEG,
-    BEVERAGES,
-    DESSERT
-}
-
-enum IsAvailable
-{
-    YES,
-    NO
-}
-
-abstract class FoodItem
-{
-    private int ItemID;
-    private String ItemName;
-    private double price;
-    private Category category;
-    private IsAvailable isAvailable;
-
-    public FoodItem(    int ItemID,
-                        String ItemName,
-                        double price,
-                        Category category,
-                        IsAvailable isAvailable
-                    )
-    {
-        this.ItemID = ItemID;
-        this.ItemName = ItemName;
-        this.price = price;
-        this.category = category;
-        this.isAvailable = isAvailable;
     }
-
-    public int getItemID()
-    {
-        return this.ItemID;
-    }
-
-    public String getItemName()
-    {
-        return this.ItemName;
-    }
-    
-    public double getPrice()
-    {
-        return this.price;
-    }
-    
-    public Category getCategory()
-    {
-        return this.category;
-    }
-    
-    public IsAvailable getIsAvailable()
-    {
-        return this.isAvailable;
-    }
-    
-    public void setItemID(int ItemID)
-    {
-        this.ItemID = ItemID;
-    }
-
-    public void setItemName(String ItemName)
-    {
-        this.ItemName = ItemName;
-    }
-
-    public void setPrice(double price)
-    {
-        this.price = price;
-    }
-
-    public void setCategory(Category category)
-    {
-        this.category = category;
-    }
-
-    public void setIsAvailable(IsAvailable isAvailable)
-    {
-        this.isAvailable = isAvailable;
-    }
-
-    public abstract void display();
 }
