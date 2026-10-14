@@ -30,7 +30,7 @@ int main()
     cin >> t;
     
     int arr[3] = {0};
-    
+     
     while(t--)
     {
         for(int i = 0; i < 3; i++)
