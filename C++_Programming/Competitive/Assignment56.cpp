@@ -20,7 +20,7 @@
 
     
     Output : LEFT
-             LEFT
+             LEFT 
              RIGHT
              LEFT
              RIGHT
