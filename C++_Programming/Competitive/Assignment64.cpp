@@ -17,7 +17,7 @@ int main()
         
         if(arr[1] == 0 || arr[0] == arr[1])
         {
-            cout << 0 << endl;
+            cout << 0 << endl; 
         }
         else if( (arr[0] / 2) < arr[1])
         {
