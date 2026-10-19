@@ -21,7 +21,7 @@ int main()
             cin >> arr[i];
             
             if(max1 < arr[i])
-            {
+            { 
                 max1 = arr[i];
             }
         }
