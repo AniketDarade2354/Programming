@@ -24,7 +24,7 @@
 
 */
 
-class program01
+class program03
 {
     public static void main(String A[])
     {
